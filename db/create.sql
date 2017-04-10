@@ -1,14 +1,14 @@
 /$# /bin/csh -f
 
-set mysqlargs = "-h localhost -u USERNAME -pPASSWORD"
-set db = DATABASE_NAME
+set mysqlargs = "-h localhost -u group24 -pgroup24_pw"
+set db = group24_db
 
 
 mysql $mysqlargs << EOF
-DROP DATABASE DATABASE_NAME;
+DROP DATABASE group24_db;
 
-CREATE DATABASE DATABASE_NAME;
-USE DATABASE_NAME;
+CREATE DATABASE group24_db;
+USE group24_db;
 
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Allocations;
