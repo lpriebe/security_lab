@@ -224,8 +224,8 @@ function handleSignup1(req,res,next,errors,err,data)
       return res.render("signup", errors);
     }
 
-   var q = "INSERT INTO User ( userName, firstName, lastName, password, email) " +
-      "VALUES ( ?, ?, ?, ?, ?)";
+   var q = "INSERT INTO User ( userName, firstName, lastName, password, email, benefitStartDate) " +
+      "VALUES (?, ?, ?, ?, ?, '9999-01-01')";
    db.query(q, [userName, firstName, lastName, password, email], function(e1,d1) { handleSignup2(req,res,next,e1,d1); } );
 }
 
