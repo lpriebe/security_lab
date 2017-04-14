@@ -88,7 +88,7 @@ function setup()
 
    // anything below here requires login
    app.use(sessionmanager.isLoggedInMiddleware);
-   app.use("/benefits", sessionmanager.isAdminUserMiddleware);
+   //app.use("/benefits", sessionmanager.isAdminUserMiddleware);
 
    // The main page of the app
    app.get("/dashboard", sessionmanager.displayWelcomePage);
