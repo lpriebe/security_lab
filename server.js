@@ -51,7 +51,12 @@ function setup()
    
    app.use(session({ secret: config.COOKIE_SECRET,
 		     saveUninitialized: true,
-		     resave: true }));
+		     resave: true,
+		     cookie: {
+			     httpOnly: true,
+			     secure: true
+			 } 
+   }));
 
    // Register templating engine
    app.engine(".html", consolidate.swig);
