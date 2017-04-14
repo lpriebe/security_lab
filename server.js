@@ -87,6 +87,7 @@ function setup()
 	    });
 
    // anything below here requires login
+   app.use("/benefits", isAdmin);
    app.use(sessionmanager.isLoggedInMiddleware);
 
    // The main page of the app
@@ -101,8 +102,8 @@ function setup()
    app.post("/contributions", contributions.handleContributionsUpdate);
 
    // Benefits Page
-   app.get("/benefits", isAdmin, benefits.displayBenefits);
-   app.post("/benefits", isAdmin, benefits.updateBenefits);
+   app.get("/benefits", benefits.displayBenefits);
+   app.post("/benefits", benefits.updateBenefits);
 
    // Allocations Page
    app.get("/allocations/:userId", allocations.displayAllocations);
